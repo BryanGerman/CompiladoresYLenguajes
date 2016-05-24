@@ -1,0 +1,89 @@
+import java.io.*;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+import javax.swing.JOptionPane;
+
+public class Aplicacion 
+{
+
+	public static void main(String[] args) throws IOException 
+	{
+		
+		File archivo = new File ("C:\\Users\\HP-Laptop\\Documents\\CompiladoresYLenguajes\\codigo.txt");
+		FileReader fr = new FileReader (archivo);
+		BufferedReader br = new BufferedReader(fr);
+		String[] linea = new String [10];
+		int numeroLinea=0;
+		int numTokens=0;
+		int contador =0;
+		String[][] datos = new String [4][10];
+        while((linea[numeroLinea]=br.readLine())!=null)
+        {
+        	
+           StringTokenizer tokens = new StringTokenizer(linea[numeroLinea]," ");
+           numTokens=tokens.countTokens();
+           contador =0;
+           while (contador!=numTokens)
+           {
+        	   datos[numeroLinea][contador] = tokens.nextToken();
+        	   contador++;
+           }
+           numeroLinea++;
+        }
+        
+    	File archivo2 = new File ("C:\\Users\\HP-Laptop\\Documents\\CompiladoresYLenguajes\\Gramatica.txt");
+    	FileReader fr2 = new FileReader (archivo2);
+    	BufferedReader br2 = new BufferedReader(fr2);
+    	
+    	String[] linea2 = new String [10];
+    	int numeroLinea2=0;
+    	int numTokens2=0;
+    	int contador2 =0;
+    	String[][] datos2 = new String [4][10];
+        while((linea2[numeroLinea2]=br2.readLine())!=null)
+        {
+        	
+           StringTokenizer tokens2 = new StringTokenizer(linea2[numeroLinea2]," ");
+           numTokens2=tokens2.countTokens();
+           contador2 =0;
+           while (contador2!=numTokens2)
+           {
+        	   datos2[numeroLinea2][contador2] = tokens2.nextToken();
+        	   contador2++;
+           }
+           numeroLinea2++;
+        }
+        
+        String datos3="";
+        for(int i=0;i<datos2.length;i++)
+        {
+        		if(datos[i][0].equals(datos2[i][0])&&datos[i][0]!=null&&datos2[i][0]!=null)
+        		{
+        			datos3 += " "+datos[i][0];
+        			if(datos[i][1].equals(datos2[i][1])&&datos[i][1]!=null&&datos2[i][1]!=null)
+            		{
+        				datos3 += " "+datos[i][1];
+        				if(datos[i][2].equals(datos2[i][2])&&datos[i][2]!=null&&datos2[i][2]!=null)
+                		{
+            				datos3 += " "+datos[i][2];
+            				if(datos[i][3].equals(datos2[i][3])&&datos[i][3]!=null&&datos2[i][3]!=null)
+                    		{
+                				datos3 += " "+datos[i][3];
+                				if(datos[i][4].equals(datos2[i][4])&&datos[i][4]!=null&&datos2[i][4]!=null)
+                        		{
+                    				datos3 += " "+datos[i][4];
+                    				System.out.printf("Linea "+i+" correcta :"+datos3+"\n");
+                        		}
+                    		}
+                		}
+            		}
+        			datos3="";
+        		}
+        }
+   	}
+}
+	
+
+
+

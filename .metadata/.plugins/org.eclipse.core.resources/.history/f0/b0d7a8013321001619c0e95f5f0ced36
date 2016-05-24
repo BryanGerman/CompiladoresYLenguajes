@@ -1,0 +1,8 @@
+import java.io.*;
+
+public class Metodos {
+	
+	File archivo = new File ("C:\\archivo.txt");
+	FileReader fr = new FileReader (archivo);
+	BufferedReader br = new BufferedReader(fr);
+}

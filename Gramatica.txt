@@ -1,0 +1,4 @@
+tipo_de_dato variable ; 
+variable operador expresión ; 
+vector [ expresión ] operador expresión ; 
+if ( expresión ) then comando ; 

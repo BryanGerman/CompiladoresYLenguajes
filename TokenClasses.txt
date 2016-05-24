@@ -1,0 +1,7 @@
+tipo_de_dato {int,float,char,vector}
+ID [a-z][A-Z|a-z|_|$]+ 
+operador {+,-,++,--,==}
+expresión [a-z][]
+if
+then
+comando
